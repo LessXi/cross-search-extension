@@ -25,7 +25,6 @@
 |------|------|
 | [Railway](https://railway.app) | 搜索 API、用户认证、收藏管理 |
 | [Turso](https://turso.tech) | 本地数据库 |
-| [Supabase](https://supabase.com) | 认证服务 |
 
 ## 开发
 
