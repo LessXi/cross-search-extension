@@ -7,7 +7,19 @@
       "WebFetch(domain:chromium.googlesource.com)",
       "Bash(gh --version)",
       "Bash(git init *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(gh repo *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(curl -s -X POST https://cross-search-backend-production.up.railway.app/api/search -H 'Content-Type: application/json' -d '{\"query\": \"清河蹊跷\", \"platforms\": [\"baidu\", \"google\", \"bing\", \"bilibili\", \"zhihu\"]}')",
+      "Bash(curl -s 'https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=清河蹊跷&page=1&page_size=100' -H 'User-Agent: Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36' -H 'Referer: https://www.bilibili.com')",
+      "Bash(curl -s 'https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=Python&page=1&page_size=100' -H 'User-Agent: Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36' -H 'Referer: https://www.bilibili.com')",
+      "Bash(curl -s -X POST https://cross-search-backend-production.up.railway.app/api/search -H 'Content-Type: application/json' -d '{\"query\": \"清河蹊跷\", \"platforms\": [\"bilibili\"]}')",
+      "Bash(curl -s -X POST https://api.tavily.com/search -H 'Content-Type: application/json' -d '{\"api_key\": \"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\", \"query\": \"清河蹊跷\", \"max_results\": 10}')",
+      "Bash(node -e ' *)",
+      "Bash(curl -s -X POST https://api.tavily.com/search -H 'Content-Type: application/json' -d '{\"api_key\": \"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\", \"query\": \"清河蹊跷\", \"max_results\": 20}')",
+      "Bash(git checkout *)",
+      "Bash(git rm *)"
     ]
   }
 }

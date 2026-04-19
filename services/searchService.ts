@@ -6,7 +6,8 @@ const ALL_PLATFORMS: Platform[] = ['baidu', 'google', 'bing', 'bilibili', 'zhihu
 
 export async function performAggregateSearch(
   request: SearchRequest,
-  userApiKey?: string
+  userApiKey?: string,
+  tavilyApiKey?: string
 ): Promise<SearchResponse> {
   const { platforms } = request;
 
@@ -18,7 +19,7 @@ export async function performAggregateSearch(
   }
 
   try {
-    const { results, error } = await searchViaRailway(request.query, validPlatforms, userApiKey);
+    const { results, error } = await searchViaRailway(request.query, validPlatforms, userApiKey, tavilyApiKey);
 
     if (error) {
       throw new Error(error);

@@ -72,6 +72,7 @@ function PopupApp() {
   const [contentFilter, setContentFilter] = useState<'all' | 'video' | 'article'>('all');
   const [showSettings, setShowSettings] = useState(false);
   const [serpApiKey, setSerpApiKey] = useState('');
+  const [tavilyApiKey, setTavilyApiKey] = useState('');
   const loadMoreRef = useRef<HTMLDivElement>(null);
 
   const SEARCH_STATE_KEY = 'cross_search_state';
@@ -108,6 +109,13 @@ function PopupApp() {
     chrome.storage.local.get('serp_api_key', (result) => {
       if (result.serp_api_key) {
         setSerpApiKey(result.serp_api_key);
+      }
+    });
+
+    // Load Tavily API key from chrome.storage
+    chrome.storage.local.get('tavily_api_key', (result) => {
+      if (result.tavily_api_key) {
+        setTavilyApiKey(result.tavily_api_key);
       }
     });
 
@@ -226,7 +234,7 @@ function PopupApp() {
     setHasSearched(true);
 
     try {
-      const response = await performAggregateSearch({ query: query.trim(), platforms: selectedPlatforms }, serpApiKey || undefined);
+      const response = await performAggregateSearch({ query: query.trim(), platforms: selectedPlatforms }, serpApiKey || undefined, tavilyApiKey || undefined);
       setAllResults(response.results);
       setFilteredResults(response.results);
       setDisplayedCount(Math.min(response.results.length, ITEMS_PER_PAGE));
@@ -394,9 +402,34 @@ function PopupApp() {
               用于百度/Google/Bing/知乎搜索，无 key 使用服务器配额
             </p>
           </div>
+          <div style={{ marginBottom: '20px' }}>
+            <label style={{ fontSize: '13px', color: '#333', fontWeight: 600, display: 'block', marginBottom: '8px' }}>
+              Tavily API Key
+            </label>
+            <input
+              type="text"
+              placeholder="输入你的 Tavily API Key"
+              value={tavilyApiKey}
+              onChange={e => setTavilyApiKey(e.target.value)}
+              style={{
+                width: '100%',
+                height: '40px',
+                padding: '0 14px',
+                fontSize: '14px',
+                borderRadius: '10px',
+                border: '1px solid #ddd',
+                background: '#fff',
+                outline: 'none',
+                boxSizing: 'border-box',
+              }}
+            />
+            <p style={{ fontSize: '11px', color: '#888', marginTop: '6px' }}>
+              用于增强搜索结果，系统自动路由，无需选择
+            </p>
+          </div>
           <button
             onClick={() => {
-              chrome.storage.local.set({ serp_api_key: serpApiKey });
+              chrome.storage.local.set({ serp_api_key: serpApiKey, tavily_api_key: tavilyApiKey });
               setShowSettings(false);
             }}
             style={{

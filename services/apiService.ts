@@ -29,11 +29,14 @@ async function request<T>(endpoint: string, options: RequestInit = {}): Promise<
 }
 
 // Railway 后端搜索（用于 Bing 等 Supabase 不支持的平台）
-export async function searchViaRailway(query: string, platforms: string[], userApiKey?: string): Promise<{ results: any[]; error?: string }> {
+export async function searchViaRailway(query: string, platforms: string[], userApiKey?: string, tavilyApiKey?: string): Promise<{ results: any[]; error?: string }> {
   try {
-    const body: { query: string; platforms: string[]; apiKey?: string } = { query, platforms };
+    const body: { query: string; platforms: string[]; apiKey?: string; tavilyApiKey?: string } = { query, platforms };
     if (userApiKey) {
       body.apiKey = userApiKey;
+    }
+    if (tavilyApiKey) {
+      body.tavilyApiKey = tavilyApiKey;
     }
     const response = await fetch(`${API_BASE}/search`, {
       method: 'POST',
