@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Cross-Search 聚合搜索",
+  "version": "1.0.0",
+  "description": "一次搜索，汇聚百度、Google、B站、知乎等多个平台的精华内容",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "windows"
+  ],
+  "host_permissions": [
+    "https://spb-t4nu88jh7679d394.supabase.opentrust.net/*",
+    "https://*.turso.io/*",
+    "https://cross-search-backend-production.up.railway.app/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "聚合搜索"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "zh_CN"
+}

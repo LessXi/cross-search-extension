@@ -1,0 +1,10 @@
+{
+  "extension_name": {
+    "message": "Cross-Search 聚合搜索",
+    "description": "Extension name"
+  },
+  "extension_description": {
+    "message": "一次搜索，汇聚多个平台精华",
+    "description": "Extension description"
+  }
+}
