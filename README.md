@@ -33,6 +33,13 @@ Chrome 扩展，一次搜索，同时获取多个平台的结果。
 - 登录后可收藏搜索结果
 - 收藏内容同步到云端
 
+### API Key 配置
+
+- 点击扩展图标右上角设置按钮
+- 可配置 SerpAPI Key（用于百度/Google/Bing/知乎搜索）
+- 可配置 Tavily API Key（开启后自动路由，返回更多结果）
+- 无 API Key 时使用服务器默认配额
+
 ## 开发
 
 ```bash
@@ -70,6 +77,7 @@ React 18 + TypeScript + Vite + Tailwind CSS
 |------|------|
 | [Railway](https://railway.app) | 搜索 API、认证、收藏 |
 | [Turso](https://turso.tech) | 数据库 |
+| [Tavily](https://tavily.com) | AI 搜索增强（配置 Key 后自动路由） |
 
 ## 相关项目
 
