@@ -11,11 +11,6 @@
 | Bing | `bing` |
 | B站 | `bilibili` |
 | 知乎 | `zhihu` |
-| 微博 | `weibo` |
-| 抖音 | `douyin` |
-| 小红书 | `xiaohongshu` |
-| YouTube | `youtube` |
-| Twitter | `twitter` |
 
 ## 技术栈
 
