@@ -60,9 +60,9 @@ React 18 + TypeScript + Vite + Tailwind CSS
 ├── services/         # 业务逻辑
 │   ├── searchService.ts   # 聚合搜索
 │   ├── apiService.ts      # API 调用
-│   ├── authService.ts     # 用户认证
 │   └── database.ts        # 本地数据库
-└── icons/             # 扩展图标
+├── icons/             # 扩展图标
+└── _locales/          # 国际化文件
 ```
 
 ## 后端服务
