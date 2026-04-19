@@ -72,6 +72,10 @@ React 18 + TypeScript + Vite + Tailwind CSS
 | [Railway](https://railway.app) | 搜索 API、认证、收藏 |
 | [Turso](https://turso.tech) | 数据库 |
 
+## 相关项目
+
+[Cross-Search Backend](https://github.com/LessXi/cross-search-backend) - 后端 API 服务
+
 ## License
 
 MIT
