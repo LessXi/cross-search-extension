@@ -1,0 +1,30 @@
+{
+  "name": "cross-search-extension",
+  "version": "1.0.0",
+  "description": "Cross-PlatformSearch browser extension",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build && cp manifest.json dist/ && cp -r icons dist/ && cp -r _locales dist/",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.17.2",
+    "@supabase/supabase-js": "^2.57.4",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.542.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sharp": "^0.34.5",
+    "tailwind-merge": "^3.3.1"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.268",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.1",
+    "crx": "^5.0.1",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.2"
+  }
+}
